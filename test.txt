@@ -1,0 +1,51 @@
+description: "This is a tester for wait function"
+resolution: [1920, 1080]
+actions:
+  - type: "wait"
+    duration: 1.5
+    randomness: True
+    condition: False
+  - type: "log"
+    message: "Waited for 1.5 sec with randomness."
+  - type: "wait"
+    randomness:
+      variance: 0.1
+      deviation: 0.9
+  - type: "log"
+    message: "Waited for 1 sec with specific randomness."
+  - type: "wait"
+    delay: 1
+    condition:
+      type: "OR"
+      cond1:
+        type: "day"
+        value: 100
+        operator: ">"
+      cond2:
+        type: "NOT"
+        cond:
+          type: "weekday"
+          value: -1
+          operator: "<="
+  - type: "log"
+    message: "True condition test passed."
+  - type: "XOR"
+    cond1:
+      type: "day"
+      value: 100
+      operator: ">"
+    cond2:
+      type: "NOR"
+      cond1:
+        type: "weekday"
+        value: -1
+        operator: "<="
+      cond2:
+        type: "weekday"
+        value: -1
+        operator: ">"
+    else:
+        type: "log"
+        message: "Else block test passed."
+  - type: "log"
+    message: "Test passed."
