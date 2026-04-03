@@ -1,0 +1,12 @@
+yaml
+pydirectinput
+tkinter
+datetime
+mss
+Levenshtein
+PIL
+pytesseract
+paddleocr
+numpy
+cv2
+imagehash
